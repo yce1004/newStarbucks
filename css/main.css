@@ -1,0 +1,289 @@
+/* 폰트 설정 */
+/* import형식으로 가지고 올때에도 내가 만들 CSS보다 위에다 선언 */
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); */
+
+
+/* 앞으로 만들 css아래에  */
+
+/* common : 공통의 스타일 정의 */
+body{font-family: 'Nanum Gothic', sans-serif;color: #333;font-weight: 400;line-height: 1.4;}
+
+img{display: block;}
+
+.inner{width: 1200px;margin: auto;position: relative;}
+
+.btn{width: 130px;padding: 10px;border: 2px solid #333;border-radius: 4px;color: #333;font-weight: bold;text-align: center;display: block;box-sizing: border-box;transition: all 0.4s;cursor: pointer;}
+.btn:hover{color: #fff;text-decoration: underline;}
+
+.btn.btn--brown{color: #fff;border-color: #fff;}
+.btn.btn--brown:hover{text-decoration: underline;;color: #000;}
+
+.btn.btn--white{color: #fff;border-color: #fff;}
+.btn.btn--white:hover{text-decoration: underline;;color: #333;}
+
+.btn.btn--gold{color: #fff;border-color: #fff;}
+.btn.btn--gold:hover{text-decoration: underline;color: #000;background-color: #fff;}
+
+.btn.btn--revers{background-color: #00704a;color: #fff;border: 2px solid #00704a;}
+.btn.btn--revers:hover{text-decoration: underline;}
+
+.btn.btn--gift{color: #fff;border-color: #fff;}
+.btn.btn--gift:hover{color: #fff;text-decoration: underline;}
+
+.btn.btn--hihi{border: 2px solid #fff;color: #fff;}
+.btn.btn--hihi:hover{text-decoration: underline;}
+/* sceoll Magic으로 연결할 css ----------------------------------------------------- */
+/* 맨처음 브라우저 로딩시 안보이게 설정 */
+/* .back-to-position{opacity: 0;transition: all 1s;} */
+
+/* 왼쪽에서 오른쪽으로 등장하는 모션의 시작위치 */
+/* .back-to-position.to-right{transform: translateX(-150px);} */
+
+/* 오른쪽에서 왼쪽으로 등장하는 모션의 시작위치 */
+/* .back-to-position.to-left{transform: translateX(150px);} */
+
+/* show를 추가가되면 실행할 모션------
+.show .back-to-position{opacity: 1;transform: translateX(0px);}
+.show .back-to-position.delay-0{transition-delay: 0;}
+.show .back-to-position.delay-1{transition-delay: 0.3s;}
+.show .back-to-position.delay-2{transition-delay: 0.6s;}
+.show .back-to-position.delay-3{transition-delay: 0.9s;} */
+
+/* ------------------------------------------------------------ */
+
+/* HEADER 헤더영역-------------------------------------- */
+header{width: 100%;background: #f6f5f0;border-bottom: 1px solid #c3c3c3;position: fixed;top: 0;z-index: 40;}
+header .inner{height: 120px;}
+header .inner h1{position: absolute;top: 0;bottom: 0;margin: auto;height: 75px;}
+header .inner .sub-menu{position: absolute;right: 0;top: 10px;display: flex;}
+header .inner .sub-menu ul.menu{display: flex;}
+header .inner .sub-menu ul.menu li{position: relative;}
+header .inner .sub-menu ul.menu li::before{content: "";display: block;width: 1px;height: 12px;background: #e5e5e5;position: absolute;top: 0;bottom: 0;margin: auto;}
+header .inner .sub-menu ul.menu li a{display: block;padding: 10px;font-size: 12px;color: #656565;}
+header .inner .sub-menu ul.menu li a:hover{color: #000;}
+header .inner .sub-menu ul.menu li:first-child::before{display: none;}
+
+header .inner .sub-menu .search{height: 35px;position: relative;transition: all 0.4s;}
+header .inner .sub-menu .search input{height: 28px;width: 30px;border-radius: 5px;border: 1px solid #ccc;background: #fff;text-indent: 5px;}
+header .inner .sub-menu .search input:focus{width: 150px; border: 1px solid #669900;outline: none;}
+
+
+header .inner .sub-menu .search span{position: absolute;top: 5px;bottom: 0;margin: auto;left: 5px;right: 0;}
+header .inner .sub-menu .search.focused span{opacity: 0;}
+
+/* main menu---------- */
+header .inner nav ul.main-menu{display: flex;position: absolute;right: 0;bottom: 0;}
+header .inner nav ul.main-menu > li .item__name{padding: 10px 20px;cursor: pointer;font-size: 14px;z-index: ;}
+header .inner nav ul.main-menu > li:hover .item__name{background: #2c2a29;color: #669900;text-decoration: underline;border-radius: 6px 6px 0 0;}
+
+header .inner nav ul.main-menu > li .item__contents{width: 100%;position: fixed;left: 0;display: none;}
+header .inner nav ul.main-menu > li:hover .item__contents{display: block;}
+
+/* 1층 */
+header .inner nav ul.main-menu > li .item__contents .contents__menu{background: #2c2a29;z-index: 15;}
+.item__contents ul.inner{display: flex;padding: 15px 0 30px;justify-content: space-around;height: 350px;}
+.item__contents ul.inner li h4{font-size: 14px;color: #fff;font-weight: bold;padding: 3px 0 15px;}
+.item__contents ul.inner li > ul li{font-size: 12px;color: #999;cursor: pointer;padding: 3px 0;}
+.item__contents ul.inner li > ul li:hover{color: #669900;}
+
+
+/* 뱃지영역------------------------------ */
+.badges{position: fixed;top:150px;right: 15px;z-index: 15;}
+.badges div{margin-bottom: 15px;}
+.badges div img{border-radius: 10px;cursor: pointer;}
+
+/* main visual area-------------------------- */
+.visual{margin-top: 120px;background-image: url(../img/slide.bg.jpg);background-size: cover;}
+.visual .inner{height: 650px;}
+.visual .inner .title{position: absolute;top: 200px;left: 10px;}
+.visual .inner .title a.btn{position: absolute;top: 130px;left: 90px;}
+.visual .inner .img-box .cup1.image{position: absolute;top: 32%;left: 20%;z-index: 5;}
+.visual .inner .img-box .cup2.image{position: absolute;top: 32%;left: 700px;z-index: 5;}
+.visual .inner .img-box .cup3.image{position: absolute;top: 13.4%;left: 800px;}
+.visual .inner .img-box .cup4.image{position: absolute;top: 13.9%;left: 32%;}
+.visual .inner .img-box .spoon{position: absolute;bottom: 0;left: 250px;}
+
+.visual .fade-in{opacity: 0;}
+.title a:hover{background-color: #fff;}
+
+/* 공지사항 area --------------------------------------------- */
+.notice .notice-line{position: relative;}
+.notice .notice-line .bg-left{position: absolute;top: 0;left: 0;width: 50%;height: 100%;background: #333;}
+.notice .notice-line .bg-right{position: absolute;top: 0;right: 0;width: 50%;height: 100%;background: #f6f5ef;}
+
+.notice .notice-line .inner{display: flex;height: 65px;}
+.notice .notice-line > .inner > .inner__left{width: 60%;height: 100%;background: #333;display: flex;align-items: center;}
+.notice .notice-line > .inner > .inner__left h2{color: #fff;font-size: 17px;width: 80px;font-weight: 700;}
+.notice .notice-line > .inner > .inner__left .more{display: block;width: 62px;height: 62px;display: flex;align-items: center;margin-right: 20px;}
+.notice .notice-line > .inner > .inner__left .more span{font-size: 35px;color: #fff;}
+
+
+/* 공지사항 : swiper slide */
+.notice .notice-line > .inner > .inner__left .swiper{
+  height: 65px;
+}
+.notice .notice-line > .inner > .inner__left .swiper .swiper-slide{display: flex;align-items: center;}
+.notice .notice-line > .inner > .inner__left .swiper a{color: #fff;}
+
+.notice .notice-line > .inner > .inner__right{width: 40%;height: 100%;background: #f6f5ef;display: flex;justify-content: center;align-items: center;}
+.notice .notice-line > .inner > .inner__right h2{margin-right: 10px;}
+.notice .notice-line > .inner > .inner__right span{font-size: 35px;cursor: pointer;}
+
+/* promotion Swiper slide */
+.notice .promotion{height: 670px;background: #f6f5ef;position: relative;
+  transition: height 0.4s;overflow: hidden;}
+.notice .promotion.hide{height: 0;}
+
+.notice .promotion .swiper{
+  width: calc(816px * 3 + 20px);
+  height: 600px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2); /*가운데정렬*/
+}
+.notice .promotion .swiper .swiper-slide{opacity: 0.5;transition: opacity 1s;position: relative;}
+.notice .promotion .swiper .swiper-slide-active{opacity: 1;}
+.notice .promotion .swiper .swiper-slide a{position: absolute;bottom: 50px;left: 0;right: 0;margin: auto;}
+
+.notice .promotion .swiper .swiper-pagination-bullet{
+  background:transparent url(../images/promotion_slide_pager.png);
+  width: 13px;height: 13px;outline: none;background-size: contain;
+}
+.notice .promotion .swiper .swiper-pagination-bullet-active{
+  background: url(../images/promotion_slide_pager_on.png);
+}
+
+.notice .promotion .swiper .swiper-prev,
+.notice .promotion .swiper .swiper-next{
+  width: 42px;height: 42px;outline: none;border: 2px solid #333;
+  position: absolute;top: 270px;z-index: 5;border-radius: 50%;cursor: pointer;
+  display: flex;justify-content: center;align-items: center;  
+}
+.notice .promotion .swiper .swiper-prev{left: 50%;margin-left: -470px;}
+.notice .promotion .swiper .swiper-next{right: 50%;margin-right: -470px;}
+.notice .promotion .swiper .swiper-prev:hover,
+.notice .promotion .swiper .swiper-next:hover{
+  background: #333;color: #fff;
+}
+
+/* REWARES area */
+.rewards{background-color: #1e3932;height: 300px;}
+.rewards .inner{display: flex;align-items: center;}
+.rewards .inner .bg-left a img{width: 226px;height: 200px;margin-top: 50px;
+  margin-right: 50px;}
+
+.rewards .inner .bg-right {display: flex;flex-wrap: wrap;}
+.rewards .inner .bg-right .cont-text{border-bottom: solid 1px #fff;margin-bottom: 30px;display: flex;}
+.rewards .inner .bg-right .cont-text .content h2{color: #fff;line-height: 1.4;margin-bottom: 12px;
+font-size: 26px;font-weight: normal;}
+.rewards .inner .bg-right .cont-text .content h2 strong{color: #fff;font-weight: bold;}
+.rewards .inner .bg-right .cont-text .content p {color: #fff;line-height: 1.7;font-size: 17px;margin-bottom: 20px;}
+.rewards .inner .bg-right .cont-text .content p strong{color: #fff;font-weight: bold; }
+.rewards .inner .bg-right .cont-text .btn-group{display: flex;width: 250px; height: 50px;}
+.rewards .inner .bg-right .cont-text .btn-group .btn--revers{margin-right: 20px;}
+.rewards .inner .bg-right .gift-cont {display: flex;}
+.rewards .inner .bg-right .gift-cont p{color: #fff;line-height: 1.7;font-size: 17px;margin-right: 10px;}
+.rewards .inner .bg-right .gift-cont p strong{color: #fff;font-weight: bold;}
+
+
+
+/* season-product */
+.season-product{background: url(../img/2023_summer_promotion_bg.jpg);background-size: cover;}
+.season-product .inner{display: flex;justify-content: center;align-items: center;}
+.season-product .inner .text-group div{margin-top: 20px;}
+.season-product .inner .text-group div a{color: #816f41;border: 2px solid #816f41;
+  font-size: 16px;line-height: 36px;transition: all 0.4s;}
+  .season-product .inner .text-group .back-to-position a:hover {background-color:#816f41 ;}
+
+  .season-product .inner .text-group div a:hover{color: #fff;}
+
+
+
+/* RESERVE COFFEE */
+.reserve-coffee{background: url(../img/230418_pc_reserve_bg.jpg)no-repeat center center;
+  background-size: cover; overflow: hidden;height: 400px;position: relative;}
+.reserve-coffee .inner .text-group{width: 300px;margin:70px auto;z-index: 20;}
+.reserve-coffee .inner .text-group .back-to-position{display: flex;justify-content: center;
+  align-items: center;width: 100%;margin-top: 20px;}
+  .reserve-coffee .inner .reserve_img{position: absolute;top: -50px;right: 60px;overflow-clip-margin: content-box;
+    overflow: clip;vertical-align: top;width: 500px}
+
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite{background: url(../img/2023_summer1_pick_bg_1.jpg)center fixed #45434c;
+  background-size:cover; height: 700px;position: relative;}
+.pick-your-favorite .inner .fav-img{background: url(../img/2023_summer1_pick_img_1.png)no-repeat center center;
+  top: 50px;
+  right: -100px;
+  width: 900px;
+  height: 600px;
+position: absolute;}
+
+.pick-your-favorite .inner .text-group{width: 300px;height: 600px;}
+.pick-your-favorite .inner .text-group .text1{margin-left: 60px;padding-top: 60px;margin-bottom: 60px;}
+.pick-your-favorite .inner .text-group .text2{margin-bottom: 20px;}
+.pick-your-favorite .inner .text-group .back-to-position{transition: all 0.4s;}
+.pick-your-favorite .inner .text-group .back-to-position:hover .btn--white{background-color: #fff;color: #000;}
+.pick-your-favorite .inner .text-group .btn--white{margin: auto;}
+
+
+
+/* RESERVE MAGAZINE */
+.reserve-magazine{background: url(../img/reserve_bg_pc.png)no-repeat 50% 100%;background-size: auto 353px;
+  overflow: hidden;
+  position: relative;
+  height: 400px;}
+  .reserve-magazine .inner{height: 400px;display: flex;align-items: center;}
+  .reserve-magazine .inner .logo-group{position: absolute;left: 280px;z-index: 15;}
+  .reserve-magazine .inner .reserve_img {position: absolute;right: 80px;top: 0;}
+  .reserve-magazine .inner .btn--blue{position: absolute;top: 280px;left: 390px;
+  }
+  .reserve-magazine .inner .back-to-position .btn {width: 130px;padding: 10px;border: 2px solid #333;border-radius: 4px;color: #333;font-weight: bold;
+    text-align: center;display: block;box-sizing: border-box;transition: all 0.4s;cursor: pointer}
+    .reserve-magazine .inner .back-to-position a:hover{background-color: #000;color: #fff;}
+
+/* FIND THE  STORE  */
+.find-store{background: url(../img/store_bg.jpg);overflow: hidden;}
+.find-store .inner{height: 400px;}
+.find-store .inner .texture1{position: absolute;top: -60px;left: 400px;}
+.find-store .inner .texture2{position: absolute;right: 0;bottom: 0;}
+.find-store .inner .picture{position: absolute;}
+.find-store .inner .picture1{top: -60px;left: 0;}
+.find-store .inner .picture2{top: 120px;left: 250px;}
+.find-store .inner .text-group{position: absolute;top: 120px;left: 550px;}
+.find-store .inner .text-group .text2{margin: 20px 0;}
+.find-store .inner .text-group .back-to-position {transition: all 0.4s;}
+.find-store .inner .text-group .back-to-position a:hover{background-color: #000;color: #fff;}
+
+/* Footer */
+footer{width: 100%;background-color: #2C2A29;}
+footer > .inner{width: 1200px;height: 100%;margin: auto;position: relative;}
+.wrap{width: 762px;background: url(../img/footer_logo.png)right 8px no-repeat;
+  margin-left: 300px;display: flex;flex-wrap: wrap;}
+  .wrap ul {width: 250px;margin-bottom: 20px; margin-top: 20px;}
+  .wrap ul li h4{font-size: 18px;color: #fff;margin-bottom: 10px;}
+  .wrap ul li a {font-size: 14px;line-height: 20px; color: #fff;}
+
+.awards {background-color: #282828;width:1300px;height: 100px;}
+.awards .inner ul{width: 1200px;margin: auto;
+  display: flex;justify-content:space-between;align-items: center;}
+
+  /* 카피라이트 */
+  .copyright{width: 1200px;text-align: center;}
+  .copyright .menu{display: flex;justify-content: center;align-items: center;}
+  .copyright .menu li{font-weight: bold;}
+  .copyright .menu li a{color: #fff;font-size: 12px; border-right: 1px solid #393939;
+  padding-right: 10px;padding-left: 5px;}
+  .copyright .menu li:first-child a{color:#00b050;}
+  .copyright .menu li:nth-child(4) a{color:#00b050;}
+
+  .copyright .btn-group{display: flex;justify-content: center;align-items: center;margin-top: 10px;margin-bottom: 10px;}
+  .copyright .btn-group a{color: #fff; border-color: #fff;margin-right: 10px;}
+  .copyright .btn-group a:hover{background-color: #fff; color: #000;}
+
+  .copyright address{}
+  .copyright address span{color: #999;font-size:12px;}
+  
+  .copyright1 {color: #999;font-size:12px;}
+
